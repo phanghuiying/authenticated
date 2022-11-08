@@ -18,7 +18,7 @@ const app = express()
 const port = 3001
 var corsOptions = {
     credentials: true,
-    origin: ['http://18.141.230.17:3000', 'http://student-7.sutdacademytools.net:3000']
+    origin: ['http://18.141.230.17:3000', 'http://student-7.sutdacademytools.net:3000', 'http://student-7.sutdacademytools.net']
 }
 app.use(cors(corsOptions))
 app.use(express.json()) // Parse request body as JSON
