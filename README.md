@@ -82,3 +82,12 @@ sudo systemctl restart nginx
 sudo service nginx start
 ````
 
+## Possible Security Vulnerabilities
+1. Security Misconfiguration
+  - The database username and password is stored in the code without any encryption. Attackers can easily find out how to gain access to these information and read the data in the database
+  - The fix to this is to create environment variables that would not be stored in repositories and attackers will then not be able to access these information at all hence lower the chances of them gaining full access to the databases.
+
+2. "SQL" Injection
+  - Currently, there isn't any data validation done when a user edits or inserts data. It allows an attacker to alter backend SQL statements by manipulating the user supplied data, e.g in a POST request. User input is then sent to an interpreter as part of command or query and trick the interpreter into executing unintended commands and gives access to unauthorized data.
+  - To prevent this, we can whitelist input fields by validating the data from the user input such as data type, data length, expected data content etc. Other preventive measures can also be giving vague error messages such that the attacker will not be able to easily figure out what he needs to change in order to gain access of the user's data or account.
+
